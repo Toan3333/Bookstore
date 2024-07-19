@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import BlogNewList from "../../layouts/components/BlogNew/BlogNewList";
-import BlogList from "../../components/blog/BlogList";
+import BlogList from "../../components/Blog/BlogList";
 
 const Blog = () => {
   const sliderRef = useRef(null);

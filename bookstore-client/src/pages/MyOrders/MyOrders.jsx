@@ -12,11 +12,19 @@ const MyOrders = () => {
     { id: 4, name: "Đăng xuất", icon: <FiLogOut />, link: "/logout" },
   ];
 
+  const statusOrderlist = [
+    { id: 1, name: "Tất cả đơn hàng" },
+    { id: 2, name: "Chờ xác nhận" },
+    { id: 3, name: "Vận chuyển" },
+    { id: 4, name: "Thành công" },
+    { id: 5, name: "Đã hủy" },
+  ];
+
   return (
     <div className="py-10">
       <div className="container">
-        <div className="flex gap-10">
-          <div className="max-w-[300px] w-full">
+        <div className="flex gap-6">
+          <div className="max-w-[250px] w-full">
             {/* Thông tin tài khoản */}
             <div className="flex items-center gap-2">
               <img
@@ -50,11 +58,64 @@ const MyOrders = () => {
               ))}
             </ul>
           </div>
-          <div className="w-3/5">
+          <div className="w-[90%]">
             <PageTitle title="Đơn hàng của tôi" className="text-mainDark mb-2"></PageTitle>
             <div className="text-grayText leading-normal font-normal mb-5">
               Theo dõi thông tin đơn hàng của bạn
             </div>
+            <div className="bg-[#f9f9f9] py-4 px-3">
+              <div className="">
+                <ul className="flex items-center justify-between gap-10">
+                  {statusOrderlist.map((item) => (
+                    <li key={item.id}>
+                      <a href="#">{item.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <table className="table">
+              <thead className="text-[16px] font-semibold leading-normal text-black">
+                <tr>
+                  <th>#</th>
+                  <th>Mã đơn hàng</th>
+                  <th>Ngày lập</th>
+                  <th>Địa chỉ</th>
+                  <th>Số điện thoại</th>
+                  <th>Tổng tiền</th>
+                  <th>Trạng thái</th>
+                </tr>
+              </thead>
+              <tbody className="font-normal text-[16px]">
+                <tr>
+                  <td>1</td>
+                  <td>BOKTOPIA001</td>
+                  <td>23/08/2004</td>
+                  <td>Quận 12, TP Hồ Chí Minh</td>
+                  <td>0776 831 909</td>
+                  <td>199000 đ</td>
+                  <td>Chưa xác nhận</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>BOKTOPIA001</td>
+                  <td>23/08/2004</td>
+                  <td>Quận 12, TP Hồ Chí Minh</td>
+                  <td>0776 831 909</td>
+                  <td>199000 đ</td>
+                  <td>Chưa xác nhận</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>BOKTOPIA001</td>
+                  <td>23/08/2004</td>
+                  <td>Quận 12, TP Hồ Chí Minh</td>
+                  <td>0776 831 909</td>
+                  <td>199000 đ</td>
+                  <td>Chưa xác nhận</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

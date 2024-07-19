@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaPhone, FaRegUser, FaSearch } from "react-icons/fa";
-import { IoCartOutline } from "react-icons/io5";
+import { FaPhone, FaSearch } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { BsBag } from "react-icons/bs";
 import { CiHeart, CiUser } from "react-icons/ci";
@@ -46,7 +45,9 @@ const Header = () => {
               <Link to="/sign-in">
                 <CiUser className="w-7 h-6" />
               </Link>
-              <BsBag className="w-5 h-6" />
+              <Link to="/cart">
+                <BsBag className="w-5 h-6" />
+              </Link>
             </div>
           </div>
         </div>

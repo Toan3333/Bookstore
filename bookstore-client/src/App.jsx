@@ -15,6 +15,7 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./pages/Checkout/Checkout";
 import Blog from "./pages/Blog/Blog";
+import BlogDetail from "./pages/BlogDetail/BlogDetail";
 function App() {
   return (
     <Fragment>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/about-us" element={<About></About>}></Route>
           <Route path="/contact-us" element={<Contact></Contact>}></Route>
           <Route path="/blog" element={<Blog></Blog>}></Route>
+          <Route path="/blog-detail" element={<BlogDetail></BlogDetail>}></Route>
           <Route path="/sign-in" element={<SignInPage></SignInPage>}></Route>
           <Route path="/sign-up" element={<SignUpPage></SignUpPage>}></Route>
           <Route path="/cart" element={<Cart></Cart>}></Route>

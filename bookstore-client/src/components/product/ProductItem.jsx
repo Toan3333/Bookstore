@@ -5,7 +5,7 @@ const ProductItem = ({ className = "" }) => {
   const isHorizontal = className.includes("horizontal");
 
   return (
-    <div className="py-5">
+    <div className="py-4">
       <div
         className={`p-2 cursor-pointer z-10 relative mr-3 group overflow-hidden rounded-[30px] hover:shadow-lg hover:bg-white`}>
         <div

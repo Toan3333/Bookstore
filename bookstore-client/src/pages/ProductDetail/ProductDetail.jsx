@@ -8,7 +8,7 @@ import "../../index.css";
 import CommentItem from "../../components/Comment/CommentItem";
 import CommentList from "../../components/Comment/CommentList";
 import Title from "../../components/Title/Title";
-import ProductList from "../../components/Products/ProductList";
+import ProductList from "../../components/product/ProductList";
 
 const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState("info");

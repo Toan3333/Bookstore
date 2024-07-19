@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../../components/Title/Title";
-import ProductItem from "../../components/Products/ProductItem";
+import ProductItem from "../../components/product/ProductItem";
+import ProductList from "../../components/product/ProductList";
 
 const ViewProduct = () => {
   return (
@@ -16,11 +17,7 @@ const ViewProduct = () => {
             />
           </div>
           <div className="w-2/5 max-lg:w-full">
-            <div className="grid grid-rows-1 gap-2 max-lg:grid-cols-3">
-              <ProductItem className="horizontal" />
-              <ProductItem className="horizontal" />
-              <ProductItem className="horizontal" />
-            </div>
+            <ProductList customColItem={true}></ProductList>
           </div>
         </div>
       </div>

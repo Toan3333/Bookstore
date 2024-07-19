@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
-import ProductItem from "./ProductItem";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import ProductItem from "./ProductItem";
 
-const ProductList = ({ useSlider, customItem }) => {
+const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) => {
   const sliderRef = useRef(null);
 
   const SampleNextArrow = ({ onClick }) => (
@@ -104,6 +105,18 @@ const ProductList = ({ useSlider, customItem }) => {
           <ProductItem />
           <ProductItem />
           <ProductItem />
+        </div>
+      ) : customThreeItem ? (
+        <div className="grid grid-cols-3 gap-4">
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+        </div>
+      ) : customColItem ? (
+        <div className="grid grid-rows-1 gap-1">
+          <ProductItem className="horizontal" />
+          <ProductItem className="horizontal" />
+          <ProductItem className="horizontal" />
         </div>
       ) : (
         <div className="grid grid-cols-5 gap-4">
