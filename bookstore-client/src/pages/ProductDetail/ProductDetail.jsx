@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import PageTitle from "../../components/pagetitle/PageTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 import { CiHeart } from "react-icons/ci";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import Button from "../../components/button/Button";
+import Button from "../../components/Button/Button";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import "../../index.css";
-import CommentItem from "../../components/comment/CommentItem";
-import CommentList from "../../components/comment/CommentList";
-import Title from "../../components/title/Title";
-import ProductList from "../../components/products/ProductList";
+import CommentItem from "../../components/Comment/CommentItem";
+import CommentList from "../../components/Comment/CommentList";
+import Title from "../../components/Title/Title";
+import ProductList from "../../components/Products/ProductList";
 
 const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState("info");

@@ -2,7 +2,7 @@ import React from "react";
 import { FaCalendar, FaHeart, FaRegEdit, FaUser } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
-import PageTitle from "../../components/pagetitle/PageTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const Favorite = () => {
   const profileMenuList = [

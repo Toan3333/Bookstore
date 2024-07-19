@@ -1,6 +1,6 @@
 import React from "react";
-import Title from "../../components/title/Title";
-import BlogList from "../../components/blog/BlogList";
+import Title from "../../components/Title/Title";
+import BlogList from "../../components/Blog/BlogList";
 
 const Blog = () => {
   return (

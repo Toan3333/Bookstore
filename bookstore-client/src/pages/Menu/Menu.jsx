@@ -1,8 +1,8 @@
 import React from "react";
-import CategoryItem from "../../components/category/CategoryItem";
-import ProductList from "../../components/products/ProductList";
+import CategoryItem from "../../components/Category/CategoryItem";
+import ProductList from "../../components/Products/ProductList";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
-import PageTitle from "../../components/pagetitle/PageTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const Menu = () => {
   const categories = [

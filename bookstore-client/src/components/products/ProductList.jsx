@@ -65,6 +65,19 @@ const ProductList = ({ useSlider, customItem }) => {
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    appendDots: (dots) => (
+      <div>
+        <ul className="custom-dots">{dots}</ul>
+      </div>
+    ),
+    customPaging: (i) => (
+      <div
+        className="w-3 h-3 rounded-full"
+        style={{
+          backgroundColor:
+            i === sliderRef.current?.innerSlider?.state.currentSlide ? "#166534" : "#ccc",
+        }}></div>
+    ),
   };
 
   return (
@@ -78,10 +91,10 @@ const ProductList = ({ useSlider, customItem }) => {
             <ProductItem />
             <ProductItem />
           </Slider>
-          <div className="absolute top-1/2 transform -translate-y-50% -right-8">
+          <div className="absolute top-1/2 transform -translate-y-1/2 -right-8">
             <SampleNextArrow onClick={() => sliderRef.current.slickNext()} />
           </div>
-          <div className="absolute top-1/2 transform -translate-y-50% -left-8">
+          <div className="absolute top-1/2 transform -translate-y-1/2 -left-8">
             <SamplePrevArrow onClick={() => sliderRef.current.slickPrev()} />
           </div>
         </>

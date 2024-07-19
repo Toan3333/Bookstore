@@ -1,6 +1,6 @@
 import React from "react";
-import Title from "../../components/title/Title";
-import ProductItem from "../../components/products/ProductItem";
+import Title from "../../components/Title/Title";
+import ProductItem from "../../components/Products/ProductItem";
 
 const ViewProduct = () => {
   return (

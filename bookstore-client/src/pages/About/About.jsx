@@ -1,5 +1,5 @@
 import React from "react";
-import PageTitle from "../../components/pagetitle/PageTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const About = () => {
   return (

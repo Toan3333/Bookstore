@@ -2,8 +2,8 @@ import React from "react";
 import { FaRegEdit, FaUser, FaHeart, FaCalendar } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
-import PageTitle from "../../components/pagetitle/PageTitle";
-import Button from "../../components/button/Button";
+import PageTitle from "../../components/PageTitle/PageTitle";
+import Button from "../../components/Button/Button";
 
 const Profile = () => {
   const profileMenuList = [

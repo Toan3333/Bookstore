@@ -1,8 +1,8 @@
 import React from "react";
 import { FaFacebookF, FaGooglePlusG } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Button from "../../components/button/Button";
-import PageTitle from "../../components/pagetitle/PageTitle";
+import Button from "../../components/Button/Button";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const SignUpPage = () => {
   return (

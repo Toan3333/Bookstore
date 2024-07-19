@@ -101,3 +101,44 @@ body {
 .product-image:hover {
   cursor: pointer;
 }
+.checkbox-style {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.checkbox-label {
+  cursor: pointer;
+}
+.checkbox-style input {
+  display: none;
+}
+.checkbox-box {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 50%; /* Make it a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear;
+  position: relative;
+}
+.checkbox-input:checked + .checkbox-box::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #166534;
+  border-radius: 50%; /* Inner circle */
+}
+.checkbox-input:checked + .checkbox-box svg {
+  opacity: 1;
+}
+.checkbox-box svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
