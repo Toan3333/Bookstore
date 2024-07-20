@@ -1,7 +1,7 @@
 import React from "react";
 import { FaEye, FaShoppingBag } from "react-icons/fa";
 import "../../index.css";
-const ProductItem = ({ className = "" }) => {
+const ProductItem = ({ className = "" }, { item }) => {
   const isHorizontal = className.includes("horizontal");
 
   return (

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import CategoryItem from "../../components/Category/CategoryItem";
 import ProductList from "../../components/product/ProductList";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
 const Menu = () => {
+  const [menuList, setMenuList] = useState([]);
   const categories = [
     "Tất cả sản phẩm",
     "Văn học",
