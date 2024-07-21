@@ -5,11 +5,4 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/bookstore/",
-  build: {
-    outDir: "dist",
-    chunkSizeWarningLimit: 1000,
-  },
-  server: {
-    historyApiFallback: true,
-  },
 });
