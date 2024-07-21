@@ -24,7 +24,7 @@ const Header = () => {
   }, []);
 
   const menuList = [
-    { id: 1, name: "Trang chủ11", link: "/" },
+    { id: 1, name: "Trang chủ", link: "/" },
     { id: 2, name: "Sản phẩm", link: "/menu" },
     { id: 3, name: "Về chúng tôi", link: "/about-us" },
     { id: 4, name: "Bài viết", link: "/blog" },
