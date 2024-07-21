@@ -127,6 +127,50 @@ const AllProductList = () => {
                     </div>
                   </td>
                 </tr>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <img src="./images/product.png" className="w-20 h-20" alt="" />
+                  </td>
+                  <td>Cây cam ngọt của tôi</td>
+                  <td>José Mauro de Vasconcelos</td>
+                  <td>Văn học</td>
+                  <td>Hội Nhà Văn</td>
+                  <td>199000đ</td>
+                  <td className="px-3 text-center">120 quyển</td>
+                  <td>
+                    <div className="flex items-center justify-center gap-3">
+                      <a href="#">
+                        <FaUserEdit className="w-5 h-5 text-main" />
+                      </a>
+                      <a href="#">
+                        <FaTrashAlt className="w-5 h-4 text-red" />
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <img src="./images/product.png" className="w-20 h-20" alt="" />
+                  </td>
+                  <td>Cây cam ngọt của tôi</td>
+                  <td>José Mauro de Vasconcelos</td>
+                  <td>Văn học</td>
+                  <td>Hội Nhà Văn</td>
+                  <td>199000đ</td>
+                  <td className="px-3 text-center">120 quyển</td>
+                  <td>
+                    <div className="flex items-center justify-center gap-3">
+                      <a href="#">
+                        <FaUserEdit className="w-5 h-5 text-main" />
+                      </a>
+                      <a href="#">
+                        <FaTrashAlt className="w-5 h-4 text-red" />
+                      </a>
+                    </div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
