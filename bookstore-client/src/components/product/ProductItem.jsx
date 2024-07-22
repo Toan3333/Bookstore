@@ -5,13 +5,13 @@ const ProductItem = ({ className = "" }, { item }) => {
   const isHorizontal = className.includes("horizontal");
 
   return (
-    <div className="py-4">
+    <div className="py-4 max-md:py-0">
       <div
-        className={`p-2 cursor-pointer z-10 relative mr-3 group overflow-hidden rounded-[30px] hover:shadow-lg hover:bg-white`}>
+        className={`p-2 cursor-pointer z-10 relative mr-3 group overflow-hidden rounded-[30px] hover:shadow-lg hover:bg-white max-md:mr-0`}>
         <div
           className={`flex ${
             isHorizontal ? "flex-row justify-start max-lg:flex-col" : "flex-col"
-          } items-center gap-4 text-center cursor-pointer py-6 px-3 relative`}>
+          } items-center gap-4 text-center cursor-pointer py-6 px-3 relative max-md:py-2 max-md:px-0`}>
           <div className="w-10 h-10 rounded-full bg-yellow flex items-center justify-center text-white absolute left-0 top-0">
             20%
           </div>
@@ -29,13 +29,13 @@ const ProductItem = ({ className = "" }, { item }) => {
                   ? "flex-col text-left items-start"
                   : "flex-col text-center items-center"
               } gap-1`}>
-              <h3 className="text-[15px] text-text leading-normal font-semibold cursor-pointer hover:text-main">
+              <h3 className="text-[15px] text-text leading-normal font-semibold cursor-pointer hover:text-main max-md:text-sm">
                 Để Con Được Ôm (2022)
               </h3>
               <p className="text-sm font-normal text-grayText leading-normal">
                 Nguyễn Trí Đoàn, Uyên Bùi
               </p>
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-3 max-md:text-sm">
                 <div className="text-red font-semibold leading-normal">96.000 đ</div>
                 <div className="line-through text-grayText">120.000 đ</div>
               </div>

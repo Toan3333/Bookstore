@@ -33,15 +33,15 @@ const FlashSale = () => {
 
   return (
     <div>
-      <div className="bg-greenLight p-16">
+      <div className="bg-greenLight p-16 max-md:p-4">
         <div className="container">
           <div className="rounded-lg py-3 px-4 bg-white">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
+            <div className="flex items-center justify-between max-md:flex-col">
+              <div className="flex items-center gap-4 max-md:gap-1">
                 <h2 className="text-textTitle text-main font-semibold leading-normal">
                   FLASH SALE
                 </h2>
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-5 max-md:flex-col max-md:gap-2 max-md:mb-3">
                   <span className="text-sm font-normal">Kết thúc trong</span>
                   <span className="countdown gap-1 text-2xl">
                     <span

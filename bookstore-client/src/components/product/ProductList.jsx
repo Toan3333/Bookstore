@@ -66,6 +66,33 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) 
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
     appendDots: (dots) => (
       <div>
         <ul className="custom-dots">{dots}</ul>
@@ -73,7 +100,7 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) 
     ),
     customPaging: (i) => (
       <div
-        className="w-3 h-3 rounded-full"
+        className="w-3 h-3 rounded-full max-md:w-2 max-md:h-2"
         style={{
           backgroundColor:
             i === sliderRef.current?.innerSlider?.state.currentSlide ? "#166534" : "#ccc",
@@ -92,10 +119,10 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) 
             <ProductItem />
             <ProductItem />
           </Slider>
-          <div className="absolute top-1/2 transform -translate-y-1/2 -right-8">
+          <div className="absolute top-1/2 transform -translate-y-1/2 -right-8 max-md:hidden">
             <SampleNextArrow onClick={() => sliderRef.current.slickNext()} />
           </div>
-          <div className="absolute top-1/2 transform -translate-y-1/2 -left-8">
+          <div className="absolute top-1/2 transform -translate-y-1/2 -left-8 max-md:hidden">
             <SamplePrevArrow onClick={() => sliderRef.current.slickPrev()} />
           </div>
         </>
@@ -107,19 +134,19 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) 
           <ProductItem />
         </div>
       ) : customThreeItem ? (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-2">
           <ProductItem />
           <ProductItem />
           <ProductItem />
         </div>
       ) : customColItem ? (
-        <div className="grid grid-rows-1 gap-1">
+        <div className="grid grid-rows-1 gap-1 max-lg:grid-cols-3 max-lg:gap-2 max-md:grid-cols-2">
           <ProductItem className="horizontal" />
           <ProductItem className="horizontal" />
           <ProductItem className="horizontal" />
         </div>
       ) : (
-        <div className="grid grid-cols-5 gap-4">
+        <div className="grid grid-cols-5 gap-4 max-lg:grid-cols-3 max-lg:gap-2 max-md:grid-cols-2">
           <ProductItem />
           <ProductItem />
           <ProductItem />

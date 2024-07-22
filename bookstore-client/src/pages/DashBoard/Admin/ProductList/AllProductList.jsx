@@ -82,7 +82,7 @@ const AllProductList = () => {
         <div className="flex-1 p-6">
           <HeaderAdmin />
           <div className="flex items-center justify-between pb-8 border-b">
-            <PageTitle title="Danh sách sản phẩm" />
+            <PageTitle title="Danh sách sản phẩm" className="text-mainDark" />
             <div>
               <button className="flex items-center gap-2 bg-mainDark py-3 px-5 text-white font-semibold leading-normal rounded-[10px]">
                 <FaPlus></FaPlus>Thêm
@@ -118,9 +118,9 @@ const AllProductList = () => {
                   <td className="px-3 text-center">120 quyển</td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
-                      <a href="#">
+                      <Link to="/dashboard/edit-product">
                         <FaUserEdit className="w-5 h-5 text-main" />
-                      </a>
+                      </Link>
                       <a href="#">
                         <FaTrashAlt className="w-5 h-4 text-red" />
                       </a>
@@ -140,9 +140,9 @@ const AllProductList = () => {
                   <td className="px-3 text-center">120 quyển</td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
-                      <a href="#">
+                      <Link to="/dashboard/edit-product">
                         <FaUserEdit className="w-5 h-5 text-main" />
-                      </a>
+                      </Link>
                       <a href="#">
                         <FaTrashAlt className="w-5 h-4 text-red" />
                       </a>
@@ -162,9 +162,9 @@ const AllProductList = () => {
                   <td className="px-3 text-center">120 quyển</td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
-                      <a href="#">
+                      <Link to="/dashboard/edit-product">
                         <FaUserEdit className="w-5 h-5 text-main" />
-                      </a>
+                      </Link>
                       <a href="#">
                         <FaTrashAlt className="w-5 h-4 text-red" />
                       </a>

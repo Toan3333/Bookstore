@@ -38,6 +38,7 @@ export default {
           info: "#3ABFF8",
           success: "#36D399",
           warning: "#FBBD23",
+          gray: "#9CA3AF",
           error: "#F87272",
         },
       },

@@ -7,15 +7,15 @@ const SellingProduct = () => {
     <div className="py-10 md:py-5">
       <div className="container">
         <Title>Bán chạy</Title>
-        <div className="flex justify-between gap-10 py-10 max-lg:flex-col max-lg:py-5">
+        <div className="flex justify-between gap-10 py-10 max-lg:flex-col max-lg:py-5 max-lg:gap-5">
           <div className="w-full max-lg:w-full">
             <ProductList customThreeItem={true}></ProductList>
           </div>
-          <div className="max-w-[500px] w-full max-lg:w-full">
+          <div className="w-3/4 max-lg:w-full max-md:hidden">
             <img
               src="./images/banchay.png"
               alt=""
-              className="w-full h-full object-contain -mr-10 rounded-2xl"
+              className="w-full h-full object-contain -mr-10 rounded-2xl max-lg:w-full"
             />
           </div>
         </div>

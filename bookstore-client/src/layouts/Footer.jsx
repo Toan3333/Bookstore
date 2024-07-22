@@ -20,7 +20,7 @@ const Footer = () => {
     <div className="pb-5">
       <div className="py-10 border">
         <div className="container">
-          <div className="footer-list max-lg:grid-cols-2 max-lg:gap-20">
+          <div className="footer-list max-lg:grid-cols-2 max-lg:gap-20 max-md:grid-cols-1">
             <div className="">
               <img
                 src="./images/logo.png"

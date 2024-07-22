@@ -19,7 +19,7 @@ const SignUpPage = () => {
                 <input
                   type="email"
                   placeholder="Nhập email"
-                  className="input rounded-[30px] input-bordered w-full"
+                  className="input rounded-[10px] input-bordered w-full"
                 />
               </div>
               <div className="w-full">
@@ -49,11 +49,11 @@ const SignUpPage = () => {
               </div>
               <div className="text-center">Hoặc đăng nhập bằng</div>
               <div className="flex items-center gap-5">
-                <div className="bg-blue w-full rounded-[30px] py-3 px-10 text-white flex items-center gap-2 justify-center cursor-pointer">
+                <div className="bg-blue w-full rounded-[10px] py-3 px-10 text-white flex items-center gap-2 justify-center cursor-pointer">
                   <FaFacebookF className="w-5 h-5"></FaFacebookF>
                   Facebook
                 </div>
-                <div className="bg-btnGoogle w-full rounded-[30px] py-3 px-10 text-white flex items-center gap-2 justify-center cursor-pointer">
+                <div className="bg-btnGoogle w-full rounded-[10px] py-3 px-10 text-white flex items-center gap-2 justify-center cursor-pointer">
                   <FaGooglePlusG className="w-5 h-5"></FaGooglePlusG>
                   Google
                 </div>

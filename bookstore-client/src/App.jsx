@@ -18,6 +18,8 @@ import Blog from "./pages/Blog/Blog";
 import BlogDetail from "./pages/BlogDetail/BlogDetail";
 import DashBoard from "./pages/DashBoard/Admin/DashBoard";
 import AllProductList from "./pages/DashBoard/Admin/ProductList/AllProductList";
+import AddProduct from "./pages/DashBoard/Admin/AddProduct/AddProduct";
+import EditProduct from "./pages/DashBoard/Admin/EditProduct/EditProduct";
 function App() {
   return (
     <Fragment>
@@ -38,10 +40,11 @@ function App() {
           <Route path="/favorites" element={<Favorite></Favorite>}></Route>
           <Route path="/product-detail" element={<ProductDetail></ProductDetail>}></Route>
         </Route>
-
         {/* admin */}
         <Route path="/dashboard" element={<DashBoard></DashBoard>}></Route>
         <Route path="/dashboard/product-list" element={<AllProductList></AllProductList>}></Route>
+        <Route path="/dashboard/add-product" element={<AddProduct></AddProduct>}></Route>
+        <Route path="/dashboard/edit-product" element={<EditProduct></EditProduct>}></Route>
       </Routes>
     </Fragment>
   );
