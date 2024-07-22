@@ -69,7 +69,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="py-10 max-lg:py-5">
+    <div className="py-10 max-lg:py-5 max-md:py-2">
       <div className="container">
         <PageTitle title="Bài viết" className="text-center mb-5" />
         <div className="flex justify-between">

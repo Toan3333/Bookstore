@@ -20,7 +20,7 @@ const Footer = () => {
     <div className="pb-5">
       <div className="py-10 border">
         <div className="container">
-          <div className="footer-list max-lg:grid-cols-2 max-lg:gap-20 max-md:grid-cols-1">
+          <div className="footer-list max-lg:grid-cols-2 max-lg:gap-20 max-md:grid-cols-1 max-md:gap-10">
             <div className="">
               <img
                 src="./images/logo.png"
@@ -63,19 +63,19 @@ const Footer = () => {
               </ul>
             </div>
             <div className="max-lg:">
-              <h3 className="font-semibold text-mainDark text-[18px] leading-normal mb-8">
+              <h3 className="font-semibold text-mainDark text-[18px] leading-normal mb-8 max-md:mb-2">
                 Thông tin liên hệ
               </h3>
-              <ul className="flex flex-col gap-3 text-text">
+              <ul className="flex flex-col gap-3 text-text max-md:text-sm">
                 <li>
                   <a href="#" className="flex gap-2 font-normal">
-                    <HiOutlineLocationMarker className="w-7 h-7" />
+                    <HiOutlineLocationMarker className="w-7 h-7 max-md:w-5 max-md:h-5" />
                     <div className="leading-normal">Quận 12, Thành phố Hồ Chí Minh</div>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="flex items-center gap-2 font-normal">
-                    <FaRegClock className="w-8 h-8" />
+                    <FaRegClock className="w-8 h-8 max-md:w-5 max-md:h-5" />
                     <div className="leading-normal">
                       Thứ 2 - Thứ 6: 9:00 - 20:00 Thứ 7: 9:00 - 12:00
                     </div>
@@ -83,15 +83,15 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="#" className="flex items-center gap-2 font-normal">
-                    <CgMail className="w-6 h-6"></CgMail>
+                    <CgMail className="w-6 h-6 max-md:w-5 max-md:h-5"></CgMail>
                     <div>bansach@gmail.com</div>
                   </a>
                 </li>
               </ul>
             </div>
             <div className="">
-              <h3 className="font-bold text-mainDark leading-normal mb-8">Dịch vụ</h3>
-              <ul className="flex flex-col gap-5 text-text">
+              <h3 className="font-bold text-mainDark leading-normal mb-8 max-md:mb-2">Dịch vụ</h3>
+              <ul className="flex flex-col gap-5 text-text max-md:text-sm max-md:gap-3">
                 <li>
                   <a href="#" className="font-normal">
                     Điều khoản sử dụng
@@ -120,8 +120,10 @@ const Footer = () => {
               </ul>
             </div>
             <div className="">
-              <h3 className="font-bold text-mainDark leading-normal mb-8">Thông tin liên hệ</h3>
-              <ul className="flex flex-col gap-5 text-text">
+              <h3 className="font-bold text-mainDark leading-normal mb-8 max-md:mb-2">
+                Thông tin liên hệ
+              </h3>
+              <ul className="flex flex-col gap-5 text-text max-md:gap-3 max-md:text-sm">
                 <li>
                   <a href="#" className="font-normal">
                     Chính sách bảo hành
@@ -148,9 +150,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="container">
-        <div className="flex justify-between items-center pt-5 font-medium leading-normal">
+        <div className="flex justify-between items-center pt-5 font-medium leading-normal max-md:flex-col">
           <div>Copyright © . All rights reserved.</div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-md:hidden">
             <img src="./images/card.png" alt="" />
           </div>
         </div>

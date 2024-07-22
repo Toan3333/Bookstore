@@ -29,10 +29,10 @@ const ProductItem = ({ className = "" }, { item }) => {
                   ? "flex-col text-left items-start"
                   : "flex-col text-center items-center"
               } gap-1`}>
-              <h3 className="text-[15px] text-text leading-normal font-semibold cursor-pointer hover:text-main max-md:text-sm">
+              <h3 className="text-[15px] text-text leading-normal font-semibold cursor-pointer hover:text-main max-md:text-sm text-center">
                 Để Con Được Ôm (2022)
               </h3>
-              <p className="text-sm font-normal text-grayText leading-normal">
+              <p className="text-sm font-normal text-grayText leading-normal text-center">
                 Nguyễn Trí Đoàn, Uyên Bùi
               </p>
               <div className="flex items-center justify-center gap-3 max-md:text-sm">

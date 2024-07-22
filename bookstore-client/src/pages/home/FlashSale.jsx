@@ -37,8 +37,8 @@ const FlashSale = () => {
         <div className="container">
           <div className="rounded-lg py-3 px-4 bg-white">
             <div className="flex items-center justify-between max-md:flex-col">
-              <div className="flex items-center gap-4 max-md:gap-1">
-                <h2 className="text-textTitle text-main font-semibold leading-normal">
+              <div className="flex items-center gap-4 max-md:gap-1 max-md:flex-col">
+                <h2 className="text-textTitle text-main font-semibold leading-normal max-md:text-lg">
                   FLASH SALE
                 </h2>
                 <div className="flex items-center gap-5 max-md:flex-col max-md:gap-2 max-md:mb-3">

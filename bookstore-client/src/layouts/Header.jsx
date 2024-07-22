@@ -80,7 +80,7 @@ const Header = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-full flex items-center justify-between gap-3  max-2xl:hidden max-md:inline-flex">
+            <div className="w-full flex items-center justify-between gap-3  max-2xl:hidden max-md:inline-flex max-sm:inline-flex">
               <div className="">
                 <FaBars className="w-8 h-8"></FaBars>
               </div>
@@ -88,7 +88,7 @@ const Header = () => {
                 <FaSearch />
                 <input
                   type="text"
-                  className="grow max-md:w-[245px] max-md:h-10"
+                  className="grow max-md:w-[245px] max-md:h-10 max-sm:w-[200px]"
                   placeholder="Tìm kiếm"
                 />
               </label>
