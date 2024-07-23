@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="">
               <img
                 src="./images/logo.png"
-                className="max-w-[277px] w-full object-cover"
+                className="max-w-[220px] w-full object-cover"
                 alt="Logo"
               />
               <div className="mt-3 text-grayText mb-5 font-normal leading-normal">

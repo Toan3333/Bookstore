@@ -33,7 +33,7 @@ const FlashSale = () => {
 
   return (
     <div>
-      <div className="bg-greenLight p-16 max-md:p-4">
+      <div className="bg-greenLight p-12 max-md:p-4">
         <div className="container">
           <div className="rounded-lg py-3 px-4 bg-white">
             <div className="flex items-center justify-between max-md:flex-col">

@@ -33,7 +33,7 @@ const Header = () => {
   ];
   return (
     <>
-      <header className="border-b max-md:hidden">
+      <header className="border-b max-md:hidden max-lg:hidden">
         <div className="container">
           <div className="flex justify-between p-3">
             <div className="flex items-center gap-2">
@@ -57,18 +57,18 @@ const Header = () => {
           isSticky ? "fixed top-0 left-0 w-full shadow-custom z-50 bg-white" : "shadow-custom"
         }`}>
         <div className="container">
-          <div className="navbar py-2 justify-between flex max-md:flex-col max-md:py-5">
+          <div className="navbar py-2 justify-between flex max-md:flex-col max-md:py-5 max-lg:flex-col max-lg:py-5">
             <div>
               <a>
                 <img
                   src="./images/logo.png"
-                  className="cursor-pointer w-52 max-md:mb-5"
+                  className="cursor-pointer w-52 max-md:mb-5 max-lg:mb-5"
                   alt="logo"
                 />
               </a>
             </div>
-            <div className="navbar-center hidden lg:flex">
-              <ul className="flex items-center px-1 gap-20 header-menu">
+            <div className="navbar-center max-lg:hidden lg:flex">
+              <ul className="flex items-center px-1 gap-20 header-menu max-xl:gap-7">
                 {menuList.map((item) => (
                   <li key={item.id}>
                     <NavLink
@@ -80,7 +80,7 @@ const Header = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-full flex items-center justify-between gap-3  max-2xl:hidden max-md:inline-flex max-sm:inline-flex">
+            <div className="w-full flex items-center justify-between gap-3  2xl:hidden max-2xl:hidden max-md:inline-flex max-sm:inline-flex max-lg:inline-flex">
               <div className="">
                 <FaBars className="w-8 h-8"></FaBars>
               </div>
@@ -88,7 +88,7 @@ const Header = () => {
                 <FaSearch />
                 <input
                   type="text"
-                  className="grow max-md:w-[245px] max-md:h-10 max-sm:w-[200px]"
+                  className="grow max-md:w-[245px] max-md:h-10 max-lg:w-[485px] max-sm:w-[200px]"
                   placeholder="Tìm kiếm"
                 />
               </label>
@@ -97,7 +97,7 @@ const Header = () => {
                 <FaUser className="w-8 h-8"></FaUser>
               </div>
             </div>
-            <label className="input input-bordered flex items-center gap-2 max-md:hidden">
+            <label className="input input-bordered flex items-center gap-2 max-md:hidden max-lg:hidden">
               <FaSearch />
               <input
                 type="text"
