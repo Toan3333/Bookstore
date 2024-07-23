@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../../components/Title/Title";
-import ProductList from "../../components/product/ProductList";
+import ProductList from "../../components/Product/ProductList";
 
 const ViewProduct = () => {
   return (

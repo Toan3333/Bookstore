@@ -5,10 +5,10 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 import Button from "../../components/Button/Button";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import "../../index.css";
-import CommentItem from "../../components/Comment/CommentItem";
+
 import CommentList from "../../components/Comment/CommentList";
 import Title from "../../components/Title/Title";
-import ProductList from "../../components/product/ProductList";
+import ProductList from "../../components/Product/ProductList";
 
 const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState("info");

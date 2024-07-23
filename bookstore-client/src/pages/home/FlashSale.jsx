@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleRight } from "react-icons/fa";
-import ProductList from "../../components/product/ProductList";
+import ProductList from "../../components/Product/ProductList";
 
 const FlashSale = () => {
   const [hours, setHours] = useState(10);
