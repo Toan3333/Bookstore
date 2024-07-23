@@ -42,12 +42,13 @@ const DashBoard = () => {
                 Dashboard
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/dashboard/manage-category" />}>
-              <div className="flex items-center gap-4">
-                <AiOutlineBars className="w-5 h-5" />
-                Quản lý danh mục
-              </div>
-            </MenuItem>
+
+            <SubMenu label="Quản lý danh mục" icon={<AiOutlineBars className="w-5 h-5" />}>
+              <MenuItem component={<Link to="/dashboard/manage-category" />}>
+                Danh sách danh mục
+              </MenuItem>
+              <MenuItem component={<Link to="/dashboard/add-category" />}>Thêm danh mục</MenuItem>
+            </SubMenu>
             <SubMenu label="Quản lý sản phẩm" icon={<FaBook className="w-5 h-5" />}>
               <MenuItem component={<Link to="/dashboard/manage-product" />}>
                 Danh sách sản phẩm

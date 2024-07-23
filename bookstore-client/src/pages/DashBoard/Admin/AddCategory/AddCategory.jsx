@@ -9,7 +9,7 @@ import PageTitle from "../../../../components/PageTitle/PageTitle";
 import HeaderAdmin from "../../../../components/HeaderAdmin/HeaderAdmin";
 import Button from "../../../../components/Button/Button";
 
-const AddProduct = () => {
+const AddCategory = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
 
@@ -45,7 +45,7 @@ const AddProduct = () => {
               <MenuItem component={<Link to="/dashboard/add-category" />}>Thêm danh mục</MenuItem>
             </SubMenu>
             <SubMenu label="Quản lý sản phẩm" icon={<FaBook className="w-5 h-5" />}>
-              <MenuItem component={<Link to="/dashboard/product-list" />}>
+              <MenuItem component={<Link to="/dashboard/manage-product" />}>
                 Danh sách sản phẩm
               </MenuItem>
               <MenuItem component={<Link to="/dashboard/add-product" />}>Thêm sản phẩm</MenuItem>
@@ -79,63 +79,17 @@ const AddProduct = () => {
         <div className="flex-1 p-6">
           <HeaderAdmin />
           <div className="flex items-center justify-between pb-8 border-b">
-            <PageTitle title="Thêm sản phẩm" className="text-mainDark" />
+            <PageTitle title="Thêm danh mục" className="text-mainDark" />
           </div>
           <div className="border rounded-[10px] py-8 px-5 mt-7">
             <form action="" className="flex flex-col gap-6">
-              <div className="flex gap-10 items-center">
-                <div className="w-full flex flex-col gap-2">
-                  <label htmlFor="product-name">*Tên sản phẩm</label>
-                  <input type="text" id="product-name" className="input input-bordered w-full" />
-                </div>
-                <div className="w-full flex flex-col gap-2">
-                  <label htmlFor="author">Tác giả</label>
-                  <input type="text" id="author" className="input input-bordered w-full" />
-                </div>
-              </div>
-              <div className="flex flex-col gap-6">
-                <div className="w-full flex flex-col gap-2">
-                  <label htmlFor="image">*Hình ảnh</label>
-                  {selectedImage && (
-                    <div className="w-52 flex">
-                      <img
-                        src={selectedImage}
-                        alt="Preview"
-                        className="w-full object-contain rounded-lg max-h-48"
-                      />
-                    </div>
-                  )}
-                  <input
-                    type="file"
-                    id="image"
-                    className="file-input file-input-success w-full"
-                    onChange={handleImageChange}
-                  />
-                </div>
-              </div>
-              <div className="flex gap-10 items-center">
-                <div className="w-full flex flex-col gap-2">
-                  <label htmlFor="category">*Danh mục</label>
-                  <input type="text" id="category" className="input input-bordered w-full" />
-                </div>
-                <div className="w-full flex flex-col gap-2">
-                  <label htmlFor="publisher">Nhà xuất bản</label>
-                  <input type="text" id="publisher" className="input input-bordered w-full" />
-                </div>
-              </div>
-              <div className="flex gap-10 items-center">
-                <div className="w-full flex flex-col gap-2">
-                  <label htmlFor="price">Giá sản phẩm</label>
-                  <input type="text" id="price" className="input input-bordered w-full" />
-                </div>
-                <div className="w-full flex flex-col gap-2">
-                  <label htmlFor="quantity">Số lượng</label>
-                  <input type="text" id="quantity" className="input input-bordered w-full" />
-                </div>
+              <div className="w-full flex flex-col gap-2">
+                <label htmlFor="category">*Danh mục</label>
+                <input type="text" id="category" className="input input-bordered w-full" />
               </div>
               <div className="w-full flex flex-col gap-2">
-                <label htmlFor="description">Mô tả</label>
-                <textarea id="description" className="input input-bordered w-full h-32" />
+                <label htmlFor="publisher">Mô tả</label>
+                <input type="text" id="publisher" className="input input-bordered w-full" />
               </div>
               <div className="flex items-center gap-3">
                 <Button>Lưu</Button>
@@ -149,4 +103,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default AddCategory;

@@ -22,6 +22,7 @@ import AddProduct from "./pages/DashBoard/Admin/AddProduct/AddProduct";
 import EditProduct from "./pages/DashBoard/Admin/EditProduct/EditProduct";
 import ManageProduct from "./pages/DashBoard/Admin/ManageProduct/ManageProduct";
 import ManageCategory from "./pages/DashBoard/Admin/ManageCategory/ManageCategory";
+import AddCategory from "./pages/DashBoard/Admin/AddCategory/AddCategory";
 function App() {
   return (
     <Fragment>
@@ -49,6 +50,7 @@ function App() {
           path="/dashboard/manage-category"
           element={<ManageCategory></ManageCategory>}></Route>
         <Route path="/dashboard/add-product" element={<AddProduct></AddProduct>}></Route>
+        <Route path="/dashboard/add-category" element={<AddCategory></AddCategory>}></Route>
         <Route path="/dashboard/edit-product" element={<EditProduct></EditProduct>}></Route>
       </Routes>
     </Fragment>
