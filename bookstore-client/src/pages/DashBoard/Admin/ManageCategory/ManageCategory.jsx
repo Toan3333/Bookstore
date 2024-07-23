@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import {
@@ -16,7 +16,7 @@ import "../DashBoard.css";
 import PageTitle from "../../../../components/PageTitle/PageTitle";
 import HeaderAdmin from "../../../../components/HeaderAdmin/HeaderAdmin";
 
-const AllProductList = () => {
+const ManageCategory = () => {
   const isAdmin = true;
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -81,8 +81,8 @@ const AllProductList = () => {
         {/* Main Content */}
         <div className="flex-1 p-6">
           <HeaderAdmin />
-          <div className="flex items-center justify-between pb-8 border-b">
-            <PageTitle title="Danh sách sản phẩm" className="text-mainDark" />
+          <div className="flex items-center justify-between pb-8 border-b pt-3">
+            <PageTitle title="Quản lý danh mục" className="text-mainDark" />
             <div>
               <button className="flex items-center gap-2 bg-mainDark py-3 px-5 text-white font-semibold leading-normal rounded-[10px]">
                 <FaPlus></FaPlus>Thêm
@@ -94,28 +94,21 @@ const AllProductList = () => {
               <thead className="text-[16px] font-semibold text-black">
                 <tr>
                   <th>#</th>
-                  <th>Hình ảnh</th>
-                  <th>Tên sách</th>
-                  <th>Tác giả</th>
-                  <th>Danh mục</th>
-                  <th>Nhà xuất bản</th>
-                  <th>Giá</th>
-                  <th>Số lượng</th>
+                  <th>Tên danh mục</th>
+                  <th>Mô tả</th>
                   <th className="text-center">Thao tác</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>
-                    <img src="./images/product.png" className="w-20 h-20" alt="" />
-                  </td>
-                  <td>Cây cam ngọt của tôi</td>
-                  <td>José Mauro de Vasconcelos</td>
                   <td>Văn học</td>
-                  <td>Hội Nhà Văn</td>
-                  <td>199000đ</td>
-                  <td className="px-3 text-center">120 quyển</td>
+                  <td className="max-w-[300px]">
+                    Văn học là một lĩnh vực nghệ thuật sử dụng ngôn từ để biểu đạt tư tưởng, cảm xúc
+                    và phản ánh hiện thực xã hội. Nó bao gồm nhiều thể loại như tiểu thuyết, thơ,
+                    kịch và truyện ngắn, mang đến cho người đọc những trải nghiệm tinh thần sâu sắc
+                    và phong phú.
+                  </td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
                       <Link to="/dashboard/edit-product">
@@ -129,15 +122,13 @@ const AllProductList = () => {
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>
-                    <img src="./images/product.png" className="w-20 h-20" alt="" />
-                  </td>
-                  <td>Cây cam ngọt của tôi</td>
-                  <td>José Mauro de Vasconcelos</td>
                   <td>Văn học</td>
-                  <td>Hội Nhà Văn</td>
-                  <td>199000đ</td>
-                  <td className="px-3 text-center">120 quyển</td>
+                  <td className="max-w-[300px]">
+                    Văn học là một lĩnh vực nghệ thuật sử dụng ngôn từ để biểu đạt tư tưởng, cảm xúc
+                    và phản ánh hiện thực xã hội. Nó bao gồm nhiều thể loại như tiểu thuyết, thơ,
+                    kịch và truyện ngắn, mang đến cho người đọc những trải nghiệm tinh thần sâu sắc
+                    và phong phú.
+                  </td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
                       <Link to="/dashboard/edit-product">
@@ -151,15 +142,13 @@ const AllProductList = () => {
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>
-                    <img src="./images/product.png" className="w-20 h-20" alt="" />
-                  </td>
-                  <td>Cây cam ngọt của tôi</td>
-                  <td>José Mauro de Vasconcelos</td>
                   <td>Văn học</td>
-                  <td>Hội Nhà Văn</td>
-                  <td>199000đ</td>
-                  <td className="px-3 text-center">120 quyển</td>
+                  <td className="max-w-[300px]">
+                    Văn học là một lĩnh vực nghệ thuật sử dụng ngôn từ để biểu đạt tư tưởng, cảm xúc
+                    và phản ánh hiện thực xã hội. Nó bao gồm nhiều thể loại như tiểu thuyết, thơ,
+                    kịch và truyện ngắn, mang đến cho người đọc những trải nghiệm tinh thần sâu sắc
+                    và phong phú.
+                  </td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
                       <Link to="/dashboard/edit-product">
@@ -181,4 +170,4 @@ const AllProductList = () => {
   );
 };
 
-export default AllProductList;
+export default ManageCategory;
