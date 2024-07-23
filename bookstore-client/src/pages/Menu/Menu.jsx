@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import CategoryItem from "../../components/Category/CategoryItem";
 import ProductList from "../../components/product/ProductList";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import PageTitle from "../../components/PageTitle/PageTitle";
-
+import "./Menu.css";
 const Menu = () => {
-  const [menuList, setMenuList] = useState([]);
   const categories = [
     "Tất cả sản phẩm",
     "Văn học",
@@ -46,7 +45,7 @@ const Menu = () => {
             Sản phẩm
           </a>
         </nav>
-        <div className="py-14">
+        <div className="py-8">
           <div className="flex justify-between gap-5 mt-12">
             <div className="max-w-[275px] w-full border rounded-[30px] py-14 px-12">
               <div className="flex flex-col gap-9">
@@ -60,7 +59,7 @@ const Menu = () => {
                 <PageTitle title="Tất cả sản phẩm"></PageTitle>
                 <div className="flex items-center gap-4">
                   <select
-                    className="select select-bordered w-full max-w-xs"
+                    className="select select-bordered w-full max-w-xs custom-select"
                     defaultValue="Mới nhất">
                     <option disabled value="">
                       Sort by:

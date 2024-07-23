@@ -146,7 +146,7 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) 
           <ProductItem className="horizontal" />
         </div>
       ) : (
-        <div className="grid grid-cols-5 gap-4 max-lg:grid-cols-3 max-lg:gap-2 max-md:grid-cols-2">
+        <div className="grid grid-cols-5 max-lg:grid-cols-3 max-lg:gap-2 max-md:grid-cols-2">
           <ProductItem />
           <ProductItem />
           <ProductItem />

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { FaBars, FaPhone, FaSearch, FaShoppingBag, FaUser } from "react-icons/fa";
+import { FaBars, FaSearch, FaShoppingBag, FaUser } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { BsBag } from "react-icons/bs";
 import { CiHeart, CiUser } from "react-icons/ci";
+import { BiPhoneCall } from "react-icons/bi";
 import "../index.css";
 
 const Header = () => {
@@ -30,14 +31,13 @@ const Header = () => {
     { id: 4, name: "Bài viết", link: "/blog" },
     { id: 5, name: "Liên hệ", link: "/contact-us" },
   ];
-
   return (
     <>
       <header className="border-b max-md:hidden">
         <div className="container">
-          <div className="flex justify-between p-5">
+          <div className="flex justify-between p-3">
             <div className="flex items-center gap-2">
-              <FaPhone />
+              <BiPhoneCall className="w-7 h-7" />
               <p>0123 456 789</p>
             </div>
             <div className="flex items-center gap-8">
@@ -57,7 +57,7 @@ const Header = () => {
           isSticky ? "fixed top-0 left-0 w-full shadow-custom z-50 bg-white" : "shadow-custom"
         }`}>
         <div className="container">
-          <div className="navbar py-4 justify-between flex max-md:flex-col max-md:py-5">
+          <div className="navbar py-2 justify-between flex max-md:flex-col max-md:py-5">
             <div>
               <a>
                 <img
@@ -101,7 +101,7 @@ const Header = () => {
               <FaSearch />
               <input
                 type="text"
-                className="grow max-md:w-[245px] max-md:h-10"
+                className="grow max-md:w-[245px] h-full max-md:h-10"
                 placeholder="Tìm kiếm"
               />
             </label>
