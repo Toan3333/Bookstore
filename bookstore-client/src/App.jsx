@@ -23,6 +23,10 @@ import EditProduct from "./pages/DashBoard/Admin/EditProduct/EditProduct";
 import ManageProduct from "./pages/DashBoard/Admin/ManageProduct/ManageProduct";
 import ManageCategory from "./pages/DashBoard/Admin/ManageCategory/ManageCategory";
 import AddCategory from "./pages/DashBoard/Admin/AddCategory/AddCategory";
+import EditCategory from "./pages/DashBoard/Admin/EditCategory/EditCategory";
+import ManageUser from "./pages/DashBoard/Admin/ManageUser/ManageUser";
+import ManageBlog from "./pages/DashBoard/Admin/ManageBlog/ManageBlog";
+import AddBlog from "./pages/DashBoard/Admin/AddBlog/AddBlog";
 function App() {
   return (
     <Fragment>
@@ -49,9 +53,13 @@ function App() {
         <Route
           path="/dashboard/manage-category"
           element={<ManageCategory></ManageCategory>}></Route>
+        <Route path="/dashboard/manage-user" element={<ManageUser></ManageUser>}></Route>
+        <Route path="/dashboard/manage-blog" element={<ManageBlog></ManageBlog>}></Route>
         <Route path="/dashboard/add-product" element={<AddProduct></AddProduct>}></Route>
         <Route path="/dashboard/add-category" element={<AddCategory></AddCategory>}></Route>
+        <Route path="/dashboard/add-blog" element={<AddBlog></AddBlog>}></Route>
         <Route path="/dashboard/edit-product" element={<EditProduct></EditProduct>}></Route>
+        <Route path="/dashboard/edit-category" element={<EditCategory></EditCategory>}></Route>
       </Routes>
     </Fragment>
   );

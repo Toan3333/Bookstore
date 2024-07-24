@@ -16,7 +16,7 @@ import "../DashBoard.css";
 import PageTitle from "../../../../components/PageTitle/PageTitle";
 import HeaderAdmin from "../../../../components/HeaderAdmin/HeaderAdmin";
 
-const ManageCategory = () => {
+const ManageUser = () => {
   const isAdmin = true;
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -83,7 +83,7 @@ const ManageCategory = () => {
         <div className="flex-1 p-6">
           <HeaderAdmin />
           <div className="flex items-center justify-between pb-8 border-b pt-3">
-            <PageTitle title="Quản lý danh mục" className="text-mainDark" />
+            <PageTitle title="Quản lý tài khoản" className="text-mainDark" />
             <div>
               <button className="flex items-center gap-2 bg-mainDark py-3 px-5 text-white font-semibold leading-normal rounded-[10px]">
                 <FaPlus></FaPlus>Thêm
@@ -95,26 +95,24 @@ const ManageCategory = () => {
               <thead className="text-[16px] font-semibold text-black">
                 <tr>
                   <th>#</th>
-                  <th>Tên danh mục</th>
-                  <th>Mô tả</th>
+                  <th>Tên người dùng</th>
+                  <th>Ngày sinh</th>
+                  <th>Email</th>
+                  <th>Địa chỉ</th>
+                  <th>Số điện thoại</th>
                   <th className="text-center">Thao tác</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Văn học</td>
-                  <td className="max-w-[300px]">
-                    Văn học là một lĩnh vực nghệ thuật sử dụng ngôn từ để biểu đạt tư tưởng, cảm xúc
-                    và phản ánh hiện thực xã hội. Nó bao gồm nhiều thể loại như tiểu thuyết, thơ,
-                    kịch và truyện ngắn, mang đến cho người đọc những trải nghiệm tinh thần sâu sắc
-                    và phong phú.
-                  </td>
+                  <td>Bùi Dĩm Lịm</td>
+                  <td>23/08/2004</td>
+                  <td>dim@gmail.com</td>
+                  <td>TP Hồ Chí Minh</td>
+                  <td>0123456789</td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
-                      <Link to="/dashboard/edit-category">
-                        <FaUserEdit className="w-5 h-5 text-main" />
-                      </Link>
                       <a href="#">
                         <FaTrashAlt className="w-5 h-4 text-red" />
                       </a>
@@ -123,18 +121,13 @@ const ManageCategory = () => {
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>Văn học</td>
-                  <td className="max-w-[300px]">
-                    Văn học là một lĩnh vực nghệ thuật sử dụng ngôn từ để biểu đạt tư tưởng, cảm xúc
-                    và phản ánh hiện thực xã hội. Nó bao gồm nhiều thể loại như tiểu thuyết, thơ,
-                    kịch và truyện ngắn, mang đến cho người đọc những trải nghiệm tinh thần sâu sắc
-                    và phong phú.
-                  </td>
+                  <td>Bùi Dĩm Lịm</td>
+                  <td>23/08/2004</td>
+                  <td>dim@gmail.com</td>
+                  <td>TP Hồ Chí Minh</td>
+                  <td>0123456789</td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
-                      <Link to="/dashboard/edit-product">
-                        <FaUserEdit className="w-5 h-5 text-main" />
-                      </Link>
                       <a href="#">
                         <FaTrashAlt className="w-5 h-4 text-red" />
                       </a>
@@ -143,18 +136,13 @@ const ManageCategory = () => {
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td>Văn học</td>
-                  <td className="max-w-[300px]">
-                    Văn học là một lĩnh vực nghệ thuật sử dụng ngôn từ để biểu đạt tư tưởng, cảm xúc
-                    và phản ánh hiện thực xã hội. Nó bao gồm nhiều thể loại như tiểu thuyết, thơ,
-                    kịch và truyện ngắn, mang đến cho người đọc những trải nghiệm tinh thần sâu sắc
-                    và phong phú.
-                  </td>
+                  <td>Bùi Dĩm Lịm</td>
+                  <td>23/08/2004</td>
+                  <td>dim@gmail.com</td>
+                  <td>TP Hồ Chí Minh</td>
+                  <td>0123456789</td>
                   <td>
                     <div className="flex items-center justify-center gap-3">
-                      <Link to="/dashboard/edit-product">
-                        <FaUserEdit className="w-5 h-5 text-main" />
-                      </Link>
                       <a href="#">
                         <FaTrashAlt className="w-5 h-4 text-red" />
                       </a>
@@ -171,4 +159,4 @@ const ManageCategory = () => {
   );
 };
 
-export default ManageCategory;
+export default ManageUser;

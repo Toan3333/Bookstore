@@ -61,18 +61,18 @@ const DashBoard = () => {
                 Quản lý đơn hàng
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/dashboard/users" />}>
+            <MenuItem component={<Link to="/dashboard/manage-user" />}>
               <div className="flex items-center gap-4">
                 <FaUser />
                 Quản lý tài khoản
               </div>
             </MenuItem>
-            <MenuItem component={<Link to="/dashboard/manage-blogs" />}>
-              <div className="flex items-center gap-4">
-                <FaRegEdit />
-                Quản lý bài viết
-              </div>
-            </MenuItem>
+            <SubMenu label="Quản lý bài viết" icon={<FaRegEdit className="w-5 h-5" />}>
+              <MenuItem component={<Link to="/dashboard/manage-blog" />}>
+                Danh sách bài viết
+              </MenuItem>
+              <MenuItem component={<Link to="/dashboard/add-blog" />}>Thêm bài viết</MenuItem>
+            </SubMenu>
             <MenuItem onClick={handleLogout}>
               <div className="flex items-center gap-4">
                 <MdLogout />

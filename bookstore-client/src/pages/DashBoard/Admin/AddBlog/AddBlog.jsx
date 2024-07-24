@@ -9,7 +9,7 @@ import PageTitle from "../../../../components/PageTitle/PageTitle";
 import HeaderAdmin from "../../../../components/HeaderAdmin/HeaderAdmin";
 import Button from "../../../../components/Button/Button";
 
-const AddProduct = () => {
+const AddBlog = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
 
@@ -150,4 +150,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default AddBlog;
