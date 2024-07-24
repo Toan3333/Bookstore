@@ -16,7 +16,7 @@ const ViewProduct = () => {
             />
           </div>
           <div className="w-2/5 max-lg:w-full">
-            <ProductList customColItem={true}></ProductList>
+            <ProductList customColItem={true} type="view"></ProductList>
           </div>
         </div>
       </div>

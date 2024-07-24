@@ -79,10 +79,7 @@ const Menu = () => {
                   </select>
                 </div>
               </div>
-              <ProductList customItem={true} />
-              <ProductList customItem={true} />
-              <ProductList customItem={true} />
-              <ProductList customItem={true} />
+              <ProductList customItem={true} type="" />
             </div>
           </div>
           <div className="flex items-center justify-center gap-5 mt-6">

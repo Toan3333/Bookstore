@@ -45,7 +45,7 @@ function App() {
           <Route path="/profile" element={<Profile></Profile>}></Route>
           <Route path="/my-orders" element={<MyOrders></MyOrders>}></Route>
           <Route path="/favorites" element={<Favorite></Favorite>}></Route>
-          <Route path="/product-detail" element={<ProductDetail></ProductDetail>}></Route>
+          <Route path="/product-detail/:id" element={<ProductDetail></ProductDetail>}></Route>
         </Route>
         {/* admin */}
         <Route path="/dashboard" element={<DashBoard></DashBoard>}></Route>

@@ -1,14 +1,52 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import ProductItem from "./ProductItem";
+import axios from "axios";
 
-const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) => {
+const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, type = "new" }) => {
+  const [productList, setProductList] = useState([]);
+  const [AllProductList, setAllProductList] = useState([]);
+  const [ProductListSale, setProductListSale] = useState([]);
+  useEffect(() => {
+    const fetchProductList = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/products/${type}`);
+        const data = response.data;
+        setProductList(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const fetchAllProductList = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/products");
+        const data = response.data.Product;
+        setAllProductList(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const fetchProductListSale = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/products/sort/sale");
+        const data = response.data.ProductsSale;
+        setProductListSale(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProductList();
+    fetchAllProductList();
+    fetchProductListSale();
+  }, []);
+
   const sliderRef = useRef(null);
-
   const SampleNextArrow = ({ onClick }) => (
     <div
       className="custom-arrow cursor-pointer hover:bg-blue"
@@ -113,11 +151,9 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) 
       {useSlider ? (
         <>
           <Slider ref={sliderRef} {...settings}>
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
+            {ProductListSale.map((item) => (
+              <ProductItem key={item._id} item={item}></ProductItem>
+            ))}
           </Slider>
           <div className="absolute top-1/2 transform -translate-y-1/2 -right-8 max-md:hidden">
             <SampleNextArrow onClick={() => sliderRef.current.slickNext()} />
@@ -128,30 +164,27 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem }) 
         </>
       ) : customItem ? (
         <div className="grid grid-cols-4 gap-4">
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
+          {AllProductList.map((item) => (
+            <ProductItem key={item._id} item={item}></ProductItem>
+          ))}
         </div>
       ) : customThreeItem ? (
         <div className="grid grid-cols-3 gap-4 max-md:grid-cols-2">
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
+          {productList.slice(0, 3).map((item) => (
+            <ProductItem key={item._id} item={item} />
+          ))}
         </div>
       ) : customColItem ? (
         <div className="grid grid-rows-1 gap-1 max-lg:grid-cols-3 max-lg:gap-2 max-md:grid-cols-2">
-          <ProductItem className="horizontal" />
-          <ProductItem className="horizontal" />
-          <ProductItem className="horizontal" />
+          {productList.slice(0, 3).map((item) => (
+            <ProductItem className="horizontal" key={item._id} item={item} />
+          ))}
         </div>
       ) : (
         <div className="grid grid-cols-5 max-lg:grid-cols-3 max-lg:gap-2 max-md:grid-cols-2">
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
+          {productList.map((item) => (
+            <ProductItem key={item._id} item={item} />
+          ))}
         </div>
       )}
     </div>

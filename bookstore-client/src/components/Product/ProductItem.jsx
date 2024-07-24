@@ -1,9 +1,14 @@
 import React from "react";
 import { FaEye, FaShoppingBag } from "react-icons/fa";
 import "../../index.css";
-const ProductItem = ({ className = "" }, { item }) => {
+import { useNavigate } from "react-router-dom";
+const ProductItem = ({ className = "", item }) => {
+  if (!item) {
+    return null; // Hoặc bạn có thể hiển thị một thông báo lỗi hoặc một component trống
+  }
+  const navigate = useNavigate();
   const isHorizontal = className.includes("horizontal");
-
+  const { name, image1, price1, price2, author } = item;
   return (
     <div className="py-4 max-md:py-0">
       <div
@@ -16,10 +21,11 @@ const ProductItem = ({ className = "" }, { item }) => {
             20%
           </div>
           <img
-            src="./images/product.png"
+            src={`http://localhost:3000/images/${image1}`}
             className={`object-contain product-image ${
               isHorizontal ? "w-[100px] h-[100px]" : "w-[190px] h-[190px] cursor-pointer"
             }`}
+            onClick={() => navigate(`/product-detail/${item._id}`)}
             alt=""
           />
           <div>
@@ -29,15 +35,18 @@ const ProductItem = ({ className = "" }, { item }) => {
                   ? "flex-col text-left items-start"
                   : "flex-col text-center items-center"
               } gap-1`}>
-              <h3 className="text-[15px] text-text leading-normal font-semibold cursor-pointer hover:text-main max-md:text-sm text-center">
-                Để Con Được Ôm (2022)
+              <h3 className="text-sm text-text leading-normal font-semibold cursor-pointer hover:text-main max-md:text-sm line-clamp-1">
+                {name}
               </h3>
-              <p className="text-sm font-normal text-grayText leading-normal text-center">
-                Nguyễn Trí Đoàn, Uyên Bùi
+              <p className="text-sm font-normal text-grayText leading-normal ">
+                {author.authorName}
               </p>
-              <div className="flex items-center justify-center gap-3 max-md:text-sm">
-                <div className="text-red font-semibold leading-normal">96.000 đ</div>
-                <div className="line-through text-grayText">120.000 đ</div>
+              <div
+                className={`flex items-center gap-3 ${
+                  isHorizontal ? "justify-start" : "justify-center max-md:text-sm"
+                }`}>
+                <div className="text-red font-semibold leading-normal">{price1} đ</div>
+                <div className="line-through text-grayText">{price2} đ</div>
               </div>
             </div>
           </div>
