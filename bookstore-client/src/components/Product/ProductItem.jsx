@@ -35,7 +35,7 @@ const ProductItem = ({ className = "", item }) => {
                   ? "flex-col text-left items-start"
                   : "flex-col text-center items-center"
               } gap-1`}>
-              <h3 className="text-sm text-text leading-normal font-semibold cursor-pointer hover:text-main max-md:text-sm line-clamp-1">
+              <h3 className="text-sm text-text leading-normal font-semibold cursor-pointer hover:text-mainDark max-md:text-sm line-clamp-1">
                 {name}
               </h3>
               <p className="text-sm font-normal text-grayText line-clamp-1 leading-normal ">
@@ -45,8 +45,8 @@ const ProductItem = ({ className = "", item }) => {
                 className={`flex items-center gap-3 ${
                   isHorizontal ? "justify-start" : "justify-center max-md:text-sm"
                 }`}>
-                <div className="text-red font-semibold leading-normal">{price1} đ</div>
-                <div className="line-through text-grayText">{price2} đ</div>
+                <div className="text-red font-semibold leading-normal">{price2} đ</div>
+                <div className="line-through text-grayText">{price1} đ</div>
               </div>
             </div>
           </div>

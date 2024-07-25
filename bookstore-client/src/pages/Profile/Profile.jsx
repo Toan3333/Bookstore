@@ -109,7 +109,7 @@ const Profile = () => {
                 <input
                   type="password"
                   id="password"
-                  placeholder="Email"
+                  placeholder="Password"
                   className="input input-bordered w-full mt-2"
                 />
               </div>

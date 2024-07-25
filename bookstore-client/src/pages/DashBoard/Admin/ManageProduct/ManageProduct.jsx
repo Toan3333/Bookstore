@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import {
@@ -15,6 +15,7 @@ import { AiFillDashboard, AiOutlineBars } from "react-icons/ai";
 import "../DashBoard.css";
 import PageTitle from "../../../../components/PageTitle/PageTitle";
 import HeaderAdmin from "../../../../components/HeaderAdmin/HeaderAdmin";
+import axios from "axios";
 
 const ManageProduct = () => {
   const isAdmin = true;
@@ -25,6 +26,19 @@ const ManageProduct = () => {
     navigate("/");
   };
 
+  const [allProductList, setAllProductList] = useState([]);
+  useEffect(() => {
+    const fetchProductList = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/products");
+        const data = response.data.Product;
+        setAllProductList(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProductList();
+  });
   return (
     <div>
       <div className="flex min-h-screen border">
@@ -45,13 +59,13 @@ const ManageProduct = () => {
               <MenuItem component={<Link to="/dashboard/manage-category" />}>
                 Danh sách danh mục
               </MenuItem>
-              <MenuItem component={<Link to="/dashboard/add-category" />}>Thêm danh mục</MenuItem>
             </SubMenu>
             <SubMenu label="Quản lý sản phẩm" icon={<FaBook className="w-5 h-5" />}>
               <MenuItem component={<Link to="/dashboard/manage-product" />}>
                 Danh sách sản phẩm
               </MenuItem>
-              <MenuItem component={<Link to="/dashboard/add-product" />}>Thêm sản phẩm</MenuItem>
+              <MenuItem component={<Link to="/dashboard/add-product" />}>Tác giả</MenuItem>{" "}
+              <MenuItem component={<Link to="/dashboard/add-product" />}>Nhà xuất bản</MenuItem>
             </SubMenu>
             <MenuItem component={<Link to="/dashboard/manage-items" />}>
               <div className="flex items-center gap-4">
@@ -84,10 +98,12 @@ const ManageProduct = () => {
           <HeaderAdmin />
           <div className="flex items-center justify-between pb-8 border-b">
             <PageTitle title="Danh sách sản phẩm" className="text-mainDark" />
-            <div>
-              <button className="flex items-center gap-2 bg-mainDark py-3 px-5 text-white font-semibold leading-normal rounded-[10px]">
-                <FaPlus></FaPlus>Thêm
-              </button>
+            <div className="flex items-center">
+              <Link to="/dashboard/add-product">
+                <button className="flex items-center gap-2 bg-mainDark py-3 px-5 text-white font-semibold leading-normal rounded-[10px]">
+                  <FaPlus></FaPlus>Thêm
+                </button>
+              </Link>
             </div>
           </div>
           <div className="mt-6 border rounded-[30px] p-5">
@@ -106,72 +122,34 @@ const ManageProduct = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>
-                    <img src="./images/product.png" className="w-20 h-20" alt="" />
-                  </td>
-                  <td>Cây cam ngọt của tôi</td>
-                  <td>José Mauro de Vasconcelos</td>
-                  <td>Văn học</td>
-                  <td>Hội Nhà Văn</td>
-                  <td>199000đ</td>
-                  <td className="px-3 text-center">120 quyển</td>
-                  <td>
-                    <div className="flex items-center justify-center gap-3">
-                      <Link to="/dashboard/edit-product">
-                        <FaUserEdit className="w-5 h-5 text-main" />
-                      </Link>
-                      <a href="#">
-                        <FaTrashAlt className="w-5 h-4 text-red" />
-                      </a>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>
-                    <img src="./images/product.png" className="w-20 h-20" alt="" />
-                  </td>
-                  <td>Cây cam ngọt của tôi</td>
-                  <td>José Mauro de Vasconcelos</td>
-                  <td>Văn học</td>
-                  <td>Hội Nhà Văn</td>
-                  <td>199000đ</td>
-                  <td className="px-3 text-center">120 quyển</td>
-                  <td>
-                    <div className="flex items-center justify-center gap-3">
-                      <Link to="/dashboard/edit-product">
-                        <FaUserEdit className="w-5 h-5 text-main" />
-                      </Link>
-                      <a href="#">
-                        <FaTrashAlt className="w-5 h-4 text-red" />
-                      </a>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>
-                    <img src="./images/product.png" className="w-20 h-20" alt="" />
-                  </td>
-                  <td>Cây cam ngọt của tôi</td>
-                  <td>José Mauro de Vasconcelos</td>
-                  <td>Văn học</td>
-                  <td>Hội Nhà Văn</td>
-                  <td>199000đ</td>
-                  <td className="px-3 text-center">120 quyển</td>
-                  <td>
-                    <div className="flex items-center justify-center gap-3">
-                      <Link to="/dashboard/edit-product">
-                        <FaUserEdit className="w-5 h-5 text-main" />
-                      </Link>
-                      <a href="#">
-                        <FaTrashAlt className="w-5 h-4 text-red" />
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+                {allProductList.map((item, index) => (
+                  <tr key={item._id}>
+                    <td>{index + 1}</td>
+                    <td>
+                      <img
+                        src={`http://localhost:3000/images/${item.image1}`}
+                        className="w-20 h-20"
+                        alt=""
+                      />
+                    </td>
+                    <td>{item.name}</td>
+                    <td>{item.publish.publishName}</td>
+                    <td>{item.category.categoryName}</td>
+                    <td>{item.author.authorName}</td>
+                    <td>{item.price2}</td>
+                    <td className="px-3 text-center">{item.quantity}</td>
+                    <td>
+                      <div className="flex items-center justify-center gap-3">
+                        <Link to="/dashboard/edit-product">
+                          <FaUserEdit className="w-5 h-5 text-main" />
+                        </Link>
+                        <a href="#">
+                          <FaTrashAlt className="w-5 h-4 text-red" />
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

@@ -37,16 +37,16 @@ const Header = () => {
         <div className="container">
           <div className="flex justify-between p-3">
             <div className="flex items-center gap-2">
-              <BiPhoneCall className="w-7 h-7" />
+              <BiPhoneCall className="w-6 h-6" />
               <p>0123 456 789</p>
             </div>
             <div className="flex items-center gap-8">
-              <CiHeart className="w-7 h-6" />
+              <CiHeart className="w-7 h-6 hover:text-mainDark cursor-pointer" />
               <Link to="/sign-in">
-                <CiUser className="w-7 h-6" />
+                <CiUser className="w-7 h-6 hover:text-mainDark cursor-pointer" />
               </Link>
               <Link to="/cart">
-                <BsBag className="w-5 h-6" />
+                <BsBag className="w-5 h-6 hover:text-mainDark cursor-pointer" />
               </Link>
             </div>
           </div>
@@ -73,7 +73,9 @@ const Header = () => {
                   <li key={item.id}>
                     <NavLink
                       to={item.link}
-                      className={({ isActive }) => (isActive ? "text-main" : "hover:text-main")}>
+                      className={({ isActive }) =>
+                        isActive ? "text-mainDark" : "hover:text-mainDark"
+                      }>
                       {item.name}
                     </NavLink>
                   </li>
@@ -98,7 +100,7 @@ const Header = () => {
               </div>
             </div>
             <label className="input input-bordered flex items-center gap-2 max-md:hidden max-lg:hidden">
-              <FaSearch />
+              <FaSearch className="text-gray-400" />
               <input
                 type="text"
                 className="grow max-md:w-[245px] h-full max-md:h-10"

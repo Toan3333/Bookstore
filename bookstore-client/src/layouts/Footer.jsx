@@ -69,15 +69,15 @@ const Footer = () => {
               <ul className="flex flex-col gap-3 text-text max-md:text-sm">
                 <li>
                   <a href="#" className="flex gap-2 font-normal">
-                    <HiOutlineLocationMarker className="w-7 h-7 max-md:w-5 max-md:h-5" />
+                    <HiOutlineLocationMarker className="w-6 h-6 max-md:w-5 max-md:h-5" />
                     <div className="leading-normal">Quận 12, Thành phố Hồ Chí Minh</div>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="flex items-center gap-2 font-normal">
-                    <FaRegClock className="w-8 h-8 max-md:w-5 max-md:h-5" />
+                    <FaRegClock className="w-5 h-5 max-md:w-5 max-md:h-5" />
                     <div className="leading-normal">
-                      Thứ 2 - Thứ 6: 9:00 - 20:00 Thứ 7: 9:00 - 12:00
+                      Thứ 2 - Thứ 6: 9:00 - 20:00 <br /> Thứ 7: 9:00 - 12:00
                     </div>
                   </a>
                 </li>

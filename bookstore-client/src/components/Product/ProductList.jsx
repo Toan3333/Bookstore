@@ -10,7 +10,6 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
   const [productList, setProductList] = useState([]);
   const [AllProductList, setAllProductList] = useState([]);
   const [ProductListSale, setProductListSale] = useState([]);
-  const [ProductListRelated, setProductListRelated] = useState([]);
 
   useEffect(() => {
     const fetchProductList = async () => {
