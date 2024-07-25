@@ -6,7 +6,14 @@ import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import ProductItem from "./ProductItem";
 import axios from "axios";
 
-const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, type = "new" }) => {
+const ProductList = ({
+  useSlider,
+  customItem,
+  customThreeItem,
+  customColItem,
+  type = "new",
+  products = [],
+}) => {
   const [productList, setProductList] = useState([]);
   const [AllProductList, setAllProductList] = useState([]);
   const [ProductListSale, setProductListSale] = useState([]);
@@ -27,7 +34,6 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
         const response = await axios.get("http://localhost:3000/products");
         const data = response.data.Product;
         setAllProductList(data);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }

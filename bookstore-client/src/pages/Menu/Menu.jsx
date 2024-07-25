@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CategoryItem from "../../components/Category/CategoryItem";
 import ProductList from "../../components/Product/ProductList";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import "./Menu.css";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+import ProductItem from "../../components/Product/ProductItem";
+
 const Menu = () => {
   const categories = [
     "Tất cả sản phẩm",
@@ -33,10 +37,36 @@ const Menu = () => {
 
   const publishers = ["NXB Nhã Nam", "NXB Kim Đồng", "NXB Trẻ", "NXB Thanh Niên", "NXB Văn Học"];
 
+  const location = useLocation();
+  const [searchTerm, setSearchTerm] = useState(
+    new URLSearchParams(location.search).get("search") || ""
+  );
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      try {
+        const url = searchTerm.trim()
+          ? `http://localhost:3000/products/search/${searchTerm.trim()}`
+          : "http://localhost:3000/products"; // Endpoint to get all products
+        const response = await axios.get(url);
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Lỗi khi tìm kiếm sản phẩm", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [searchTerm]);
+
   return (
     <div className="mt-8">
       <div className="container mx-auto">
-        <nav className="">
+        <nav>
           <a href="#" className="text-gray-500">
             Trang chủ
           </a>
@@ -56,7 +86,7 @@ const Menu = () => {
             </div>
             <div className="w-full">
               <div className="flex items-center justify-between mb-6">
-                <PageTitle title="Tất cả sản phẩm"></PageTitle>
+                <PageTitle title="Tất cả sản phẩm" />
                 <div className="flex items-center gap-4">
                   <select
                     className="select select-bordered w-full max-w-xs custom-select"
@@ -79,7 +109,17 @@ const Menu = () => {
                   </select>
                 </div>
               </div>
-              <ProductList customItem={true} type="" />
+              {loading ? (
+                <div className="text-center">Đang tải sản phẩm...</div>
+              ) : products.length > 0 ? (
+                <div className="grid grid-cols-4 gap-4">
+                  {products.map((item) => (
+                    <ProductItem key={item._id} item={item} />
+                  ))}
+                </div>
+              ) : (
+                <ProductList customItem={true} type="" />
+              )}
             </div>
           </div>
           <div className="flex items-center justify-center gap-5 mt-6">

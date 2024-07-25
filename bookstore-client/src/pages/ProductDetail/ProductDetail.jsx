@@ -60,10 +60,10 @@ const ProductDetail = () => {
             {name}
           </a>
         </nav>
-        <div className="flex justify-between py-10">
-          <div className="w-[65%]">
+        <div className="flex justify-between py-10 max-md:flex-col">
+          <div className="w-[65%] max-xl:w-3/5 max-md:w-full">
             <div className="flex gap-2 items-center">
-              <div className="max-w-[130px] w-full">
+              <div className="max-w-[130px] w-full max-xl:hidden">
                 <div className="flex flex-col gap-10">
                   {[image1, image2, image3, image4].map((img, index) =>
                     img ? (
@@ -80,20 +80,18 @@ const ProductDetail = () => {
               </div>
               {image1 && (
                 <div className="w-full">
-                  <div>
-                    <img
-                      src={`http://localhost:3000/images/${image1}`}
-                      alt="product-detail-img-main"
-                      className="w-full h-[500px]"
-                    />
-                  </div>
+                  <img
+                    src={`http://localhost:3000/images/${image1}`}
+                    alt="product-detail-img-main"
+                    className="w-full h-[500px] object-cover max-md:h-[400px]"
+                  />
                 </div>
               )}
             </div>
           </div>
-          <div className="w-[45%]">
-            <PageTitle title={name} className="mb-5 leading-9" />
-            <div className="flex items-center gap-8">
+          <div className="w-[45%] max-md:w-full">
+            <PageTitle title={name} className="mb-5 leading-9 max-xl:text-xl" />
+            <div className="flex items-center gap-8 max-md:gap-2">
               <div className="text-red">{price1}</div>
               <div className="flex items-center gap-10">
                 <div className="line-through">{price2}</div>
@@ -101,7 +99,7 @@ const ProductDetail = () => {
                 <div className="text-gray-500">{sale} Đã bán</div>
               </div>
             </div>
-            <div className="flex justify-between mt-8 gap-5">
+            <div className="flex justify-between mt-8 gap-5 max-md:hidden">
               <div className="w-full flex flex-col gap-3 text-text">
                 <div>
                   Tác giả: <span className="text-mainDark leading-normal">{author.authorName}</span>
@@ -219,7 +217,7 @@ const ProductRelated = ({ id }) => {
       <div className="container">
         <div className="mt-10">
           <Title children="Sản phẩm liên quan" />
-          <div className="grid grid-cols-5">
+          <div className="grid grid-cols-5 max-lg:grid-cols-2">
             {productListRelated &&
               productListRelated.map((item) => (
                 <ProductItem item={item} key={item._id}></ProductItem>
