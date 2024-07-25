@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +10,8 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
   const [productList, setProductList] = useState([]);
   const [AllProductList, setAllProductList] = useState([]);
   const [ProductListSale, setProductListSale] = useState([]);
+  const [ProductListRelated, setProductListRelated] = useState([]);
+
   useEffect(() => {
     const fetchProductList = async () => {
       try {
@@ -27,6 +28,7 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
         const response = await axios.get("http://localhost:3000/products");
         const data = response.data.Product;
         setAllProductList(data);
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -41,12 +43,14 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
         console.log(error);
       }
     };
+
     fetchProductList();
     fetchAllProductList();
     fetchProductListSale();
   }, []);
 
   const sliderRef = useRef(null);
+
   const SampleNextArrow = ({ onClick }) => (
     <div
       className="custom-arrow cursor-pointer hover:bg-blue"
@@ -96,12 +100,12 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 5,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -111,7 +115,7 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -120,7 +124,7 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -128,6 +132,7 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots: false,
         },
       },
     ],
@@ -141,7 +146,9 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
         className="w-3 h-3 rounded-full max-md:w-2 max-md:h-2"
         style={{
           backgroundColor:
-            i === sliderRef.current?.innerSlider?.state.currentSlide ? "#166534" : "#ccc",
+            i === Math.floor(sliderRef.current?.innerSlider?.state.currentSlide / 5)
+              ? "#166534"
+              : "#ccc",
         }}></div>
     ),
   };
@@ -152,7 +159,7 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
         <>
           <Slider ref={sliderRef} {...settings}>
             {ProductListSale.map((item) => (
-              <ProductItem key={item._id} item={item}></ProductItem>
+              <ProductItem key={item._id} item={item} />
             ))}
           </Slider>
           <div className="absolute top-1/2 transform -translate-y-1/2 -right-8 max-md:hidden">
@@ -165,7 +172,7 @@ const ProductList = ({ useSlider, customItem, customThreeItem, customColItem, ty
       ) : customItem ? (
         <div className="grid grid-cols-4 gap-4">
           {AllProductList.map((item) => (
-            <ProductItem key={item._id} item={item}></ProductItem>
+            <ProductItem key={item._id} item={item} />
           ))}
         </div>
       ) : customThreeItem ? (

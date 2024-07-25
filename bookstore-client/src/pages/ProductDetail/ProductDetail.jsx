@@ -7,9 +7,9 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import "../../index.css";
 import CommentList from "../../components/Comment/CommentList";
 import Title from "../../components/Title/Title";
-import ProductList from "../../components/Product/ProductList";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import ProductItem from "../../components/Product/ProductItem";
 
 const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState("info");
@@ -193,9 +193,38 @@ const ProductDetail = () => {
             <CommentList />
           </div>
         )}
+        <ProductRelated id={id}></ProductRelated>
+      </div>
+    </div>
+  );
+};
+
+const ProductRelated = ({ id }) => {
+  const [productListRelated, setProductListRelated] = useState(null);
+  useEffect(() => {
+    const fetchProductListRelated = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/products/related/${id}/related`);
+        const data = response.data;
+        setProductListRelated(data);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProductListRelated();
+  }, [id]);
+  return (
+    <div>
+      <div className="container">
         <div className="mt-10">
           <Title children="Sản phẩm liên quan" />
-          <ProductList />
+          <div className="grid grid-cols-5">
+            {productListRelated &&
+              productListRelated.map((item) => (
+                <ProductItem item={item} key={item._id}></ProductItem>
+              ))}
+          </div>
         </div>
       </div>
     </div>

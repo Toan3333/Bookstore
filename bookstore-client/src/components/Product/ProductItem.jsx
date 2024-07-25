@@ -38,7 +38,7 @@ const ProductItem = ({ className = "", item }) => {
               <h3 className="text-sm text-text leading-normal font-semibold cursor-pointer hover:text-main max-md:text-sm line-clamp-1">
                 {name}
               </h3>
-              <p className="text-sm font-normal text-grayText leading-normal ">
+              <p className="text-sm font-normal text-grayText line-clamp-1 leading-normal ">
                 {author.authorName}
               </p>
               <div
